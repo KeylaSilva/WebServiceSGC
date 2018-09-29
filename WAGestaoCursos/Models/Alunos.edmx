@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SGCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ALUNOS">
+          <Key>
+            <PropertyRef Name="CPF_ALUNO" />
+          </Key>
+          <Property Name="CPF_ALUNO" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="NOME_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="END_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="ESTADO_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="MUNICIPIO_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="TEL_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="EMAIL_ALUNO" Type="varchar" MaxLength="255" />
+          <Property Name="SENHA_ALUNO" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="SGCModelStoreContainer">
+          <EntitySet Name="ALUNOS" EntityType="Self.ALUNOS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SGCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ALUNOS">
+          <Key>
+            <PropertyRef Name="CPF_ALUNO" />
+          </Key>
+          <Property Name="CPF_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOME_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="END_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MUNICIPIO_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TEL_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SENHA_ALUNO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SGCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ALUNOS" EntityType="Self.ALUNOS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SGCModelStoreContainer" CdmEntityContainer="SGCEntities">
+          <EntitySetMapping Name="ALUNOS">
+            <EntityTypeMapping TypeName="SGCModel.ALUNOS">
+              <MappingFragment StoreEntitySet="ALUNOS">
+                <ScalarProperty Name="CPF_ALUNO" ColumnName="CPF_ALUNO" />
+                <ScalarProperty Name="NOME_ALUNO" ColumnName="NOME_ALUNO" />
+                <ScalarProperty Name="END_ALUNO" ColumnName="END_ALUNO" />
+                <ScalarProperty Name="ESTADO_ALUNO" ColumnName="ESTADO_ALUNO" />
+                <ScalarProperty Name="MUNICIPIO_ALUNO" ColumnName="MUNICIPIO_ALUNO" />
+                <ScalarProperty Name="TEL_ALUNO" ColumnName="TEL_ALUNO" />
+                <ScalarProperty Name="EMAIL_ALUNO" ColumnName="EMAIL_ALUNO" />
+                <ScalarProperty Name="SENHA_ALUNO" ColumnName="SENHA_ALUNO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
